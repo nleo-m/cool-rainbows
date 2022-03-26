@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cool-rainbows.css">
+    <title>Rainbows are c00l</title>
+</head>
+<body onload="setBodyColor()">
+    <div class="content-wrapper">
+        <div id='patternModal' class="custom-modal">
+            <div class="modal-body">
+                <p>Show your colors!</p>
+                <span>Put them hexcodes in the box bellow, each separated by comma.</span>
+                <input id='customPattern' type="text" placeholder="#F25250, #FF8847, #FFD651" />
+                <button onclick="setCustomPattern()">Set custom pattern</button>
+            </div>
+        </div>
+        <div class="content">
+            <button class='btn-change' onclick="changeColor('p')">&lt;</button>
+            <div class="text">
+                <p id="message">Whoa! so dark in here <br> Try clicking one of them buttons on the side</p>
+            </div>
+            <button class='btn-change' onclick="changeColor('n')">&gt;</button>
+        </div>
+        <div class="footer">
+            <div class="automatic">
+                <input id="automaticTime" type="text" />
+                <div onclick="setAutomatic()" class="toggle">
+                    <div class="toggle-ball"></div>
+                </div>
+            </div>
+            <div class="patterns">
+                <div onclick="setPattern(0)" class="round pattern-0"></div>
+                <div onclick="setPattern(1)" class="round pattern-1"></div>
+                <div onclick="setPattern(2)" class="round pattern-2"></div>
+                <div onclick="setPattern(3)" class="round pattern-3"></div>
+                <div onclick="showPatternModal()" class="round pattern-4"></div>
+            </div>
+        </div>
+        </div>
+
+    </div>
+
+    <script src="./cool-rainbows.js"></script>
+</body>
+</html>
