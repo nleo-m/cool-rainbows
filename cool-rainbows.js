@@ -1,4 +1,6 @@
+const bodyStyle = document.body.style;
 var colors = ['#000000', '#CC99C9', '#9EC1CF', '#9EE09E', '#FFFF60', '#FEB144', '#FF6663'];
+var currentIndex = 0;
 var firstRun = true;
 var patCustom = [];
 var modal = false;
@@ -17,7 +19,7 @@ function setAutomatic(){
     if (interval)
         clearInterval(interval);
     document.getElementsByClassName('toggle')[0].style.backgroundColor = '#3f3f3f';
-    return document.getElementsByClassName('toggle-ball')[0].style.marginLeft = '0';
+    return document.getElementsByClassName('toggle-ball')[0].style.marginLeft = '2px';
 
 }
 
@@ -69,15 +71,14 @@ function setPattern(pattern){
             break;
     }
 
-    return document.body.style.backgroundColor = colors[0];
+    return bodyStyle.backgroundColor = colors[0];
 }
 
 function changeColor(step){
-    let currentColor = document.body.style.backgroundColor;
+    let currentColor = bodyStyle.backgroundColor;
     let applyColor;
     let hexCurrent = rgbToHex(currentColor);
-    let text = document.getElementById('text');
-    let currentIndex = colors.findIndex(color => {
+    currentIndex = colors.findIndex(color => {
         return color == hexCurrent;
     });
     
@@ -90,20 +91,28 @@ function changeColor(step){
     }
 
     if (step == 'p'){
-        if (currentIndex == 0)
+        if (currentIndex == 0){
             applyColor = colors[colors.length - 1];
-        else
+            document.getElementById('index').innerHTML = colors.length - 1 + ' / ' + (colors.length - 1);
+        }
+            else{
             applyColor = colors[currentIndex -1];
-    }
-    
-    if (step == 'n'){
-        if (currentIndex == colors.length -1)
+            document.getElementById('index').innerHTML = (currentIndex - 1) + ' / ' + (colors.length - 1);
+            }
+        }
+        
+        if (step == 'n'){
+            if (currentIndex == colors.length -1){
             applyColor = colors[0];
-        else
-            applyColor = colors[currentIndex + 1];
-    }
-
-    document.body.style.backgroundColor = applyColor;
+            document.getElementById('index').innerHTML =  0 + ' / ' + (colors.length - 1);
+            }
+            else{
+                applyColor = colors[currentIndex + 1];
+                document.getElementById('index').innerHTML =  (currentIndex + 1) + ' / ' + (colors.length - 1);
+            }
+        }
+        
+    bodyStyle.backgroundColor = applyColor;
 }
 
 function hexValidator(hexCodes){
@@ -148,7 +157,6 @@ function rgbToHex(color){
     color = color.split(',');
     var hexColor = [];
     for (item of color){
-        let hexDigits = {10: 'A', 11: 'B', 12: 'C', 13: 'D', 14: 'E', 15: 'F'}
         let firstDigit = Math.floor(item / 16);
         let secondDigit = item % 16;
         firstDigit = hexSwitch(firstDigit);
@@ -161,5 +169,5 @@ function rgbToHex(color){
 }
 
 function setBodyColor(){
-    document.body.style.backgroundColor = '#000';
+    bodyStyle.backgroundColor = colors[0];
 }
