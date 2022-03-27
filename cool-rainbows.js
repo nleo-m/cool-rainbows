@@ -19,7 +19,7 @@ function setAutomatic(){
     if (interval)
         clearInterval(interval);
     document.getElementsByClassName('toggle')[0].style.backgroundColor = '#3f3f3f';
-    return document.getElementsByClassName('toggle-ball')[0].style.marginLeft = '0';
+    return document.getElementsByClassName('toggle-ball')[0].style.marginLeft = '2px';
 
 }
 
