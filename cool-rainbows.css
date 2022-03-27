@@ -122,7 +122,7 @@ body{
 }
 
 .pattern-2{
-    background-image: linear-gradient(to bottom left, #DE0003, #FCFF09, #003DE5 );
+    background-image: linear-gradient(to bottom left, #DE0003, #596CD9, #FF322F );
 }
 
 .pattern-3{
@@ -179,4 +179,22 @@ body{
 .modal-body button:hover{
     cursor: pointer;
     background-color: #ececec;
+}
+
+.current{
+    margin-left: auto;
+    display: flex;
+    background-color: #8080806b;
+    margin-left: auto;
+    margin-bottom: 1rem;
+    max-width: 15%;
+    min-width: 100px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.index{
+    color:#ffffff;
 }
