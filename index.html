@@ -10,11 +10,15 @@
 </head>
 <body onload="setBodyColor()">
     <div class="content-wrapper">
+        <!-- <div class="header">
+            <img onclick="setLanguage(0)" class="square" src="./assets/us.svg" />
+            <img onclick="setLanguage(1)" class="square" src="./assets/br.svg" />
+        </div> -->
         <div id='patternModal' class="custom-modal">
             <div class="modal-body">
                 <p>Show your colors!</p>
                 <span>Put them hexcodes in the box bellow, each separated by comma.</span>
-                <input id='customPattern' type="text" placeholder="#F25250, #FF8847, #FFD651" />
+                <input id='customPattern' type="text" placeholder="#F25250, #FF8847, #000" />
                 <button onclick="setCustomPattern()">Set custom pattern</button>
             </div>
         </div>
