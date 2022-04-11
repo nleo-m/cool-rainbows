@@ -62,6 +62,16 @@ body{
     max-width: 100%;
 }
 
+.header{
+    display: flex;
+    background-color: #8080806b;
+    margin-left: 1rem;
+    margin-top: 1rem;
+    max-width: 150px;
+    justify-content: center;
+    padding: 10px;
+}
+
 .automatic{
     display: flex;
     background-color: #8080806b;
@@ -152,6 +162,21 @@ body{
 
 .pattern-3{
     background-image: linear-gradient(to bottom left, #FF2E03, #FCFF09, #003DE5);
+}
+
+.square{
+    min-width: 40px;
+    min-height: 40px;
+    max-height: 40px;
+    max-height: 40px;
+    border-radius: 10px;
+    object-fit: cover;
+    border: 2px solid #fff;
+    cursor: pointer;
+}
+
+.square:not(:last-child){
+    margin-right: 10px;
 }
 
 .custom-modal{
